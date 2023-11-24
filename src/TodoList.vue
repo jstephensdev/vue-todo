@@ -23,7 +23,6 @@ const todosFilteredByTag = computed(() => {
       <button v-show="toggle && show" @click="show = !show">&times;</button>
       <button v-show="!show && props.todos.length" @click="show = !show">+</button>
     </div>
-
     <div v-show="show">
       <TodoTags v-model:activeTag="activeTag" :initialTags="props.todos.map((todo) => todo.tag)" />
       <ul class="mt-6">
