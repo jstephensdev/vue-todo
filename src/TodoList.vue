@@ -25,7 +25,7 @@ const todosFilteredByTag = computed(() => {
     </div>
 
     <div v-show="show">
-      <!-- <TodoTags v-model:activeTag="activeTag" :initialTags="props.todos.map((todo) => todo.tag)" /> -->
+      <TodoTags v-model:activeTag="activeTag" :initialTags="props.todos.map((todo) => todo.tag)" />
       <ul class="mt-6">
         <Todo v-for="todo in todosFilteredByTag" :key="todo.id" :todo="todo" />
       </ul>

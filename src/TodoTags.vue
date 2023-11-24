@@ -1,9 +1,9 @@
 <script setup>
 import { computed } from 'vue';
-defineProps(['initialTags', 'activeTag']);
+const props = defineProps(['initialTags', 'activeTag']);
 
 const tags = computed(() => {
-  return ['all', ...new Set(initialTags)];
+  return ['all', ...new Set(props.initialTags)];
 });
 </script>
 
@@ -14,7 +14,7 @@ const tags = computed(() => {
       v-for="tag in tags"
       :key="tag"
       class="border rounded px-1 py-px text-xs"
-      :class="{ 'border-blue-500 text-blue-500': tag === activeTag }"
+      :class="{ 'border-blue-500 text-blue-500': tag === props.activeTag }"
     >
       {{ tag }}
     </button>
